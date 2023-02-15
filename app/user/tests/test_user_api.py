@@ -62,5 +62,5 @@ class PublicUserApiTests(TestCase):
             email=payload['email']
         ).exists()
         self.assertFalse(user_exists)
-        self.assertFalse(user_exists, "User was created despite password being too short")
+
 

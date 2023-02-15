@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+
 import os
 from pathlib import Path
 
@@ -26,12 +27,7 @@ SECRET_KEY = 'django-insecure-z_&q44od!hs450m#p_pu3f5x6us6ts3302x-hn+@=tqmjy4-&v
 DEBUG = True
 
 ALLOWED_HOSTS = []
-ALLOWED_HOSTS.extend(
-    filter(
-        None,
-        os.environ.get('ALLOWED_HOSTS', '').split(','),
-    )
-)
+
 
 # Application definition
 
@@ -42,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
+
     'rest_framework',
     'drf_spectacular',
+    'core',
     'user',
 ]
 
